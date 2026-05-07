@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { Hamrah } from "@/app/layout";
+import {Hamrah} from "../../app/fonts";
 import abouUs from "@/public/images/about-us.png";
 import FirstChildAboutUs from "./first-child-aboutUs";
 

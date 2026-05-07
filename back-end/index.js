@@ -15,18 +15,11 @@ const CurrencyPrice = require("./models/CURRENCY/currencyPrice");
 const clientRoutes = require("./routes/client-routes");
 const adminRoutes = require("./routes/admin-routes");
 
-const {
-  initalCurrency,
-  initialCoin,
-  initialCoinPrice,
-  initialCurrencyPrice,
-} = require("./initialDB.js");
-
 app.use(
   cors({
     origin: "*",
     optionsSuccessStatus: 200,
-  })
+  }),
 );
 
 app.use(bodyParser.json());
@@ -62,7 +55,7 @@ CurrencyArchive.belongsTo(Currency);
 
 sequelize
   .sync()
-  //.sync({ force: true })
+  // .sync({ force: true })
   .then((result) => {
     const port = process.env.PORT || 4000;
     const server = app.listen(port, () => {
@@ -74,65 +67,5 @@ sequelize
     });
   })
   .catch((err) => {
-    // console.log(err);
+    console.log(err);
   });
-
-// Currency.sync()
-//   .then(async () => {
-//     try {
-//       const finded = await Currency.findAll();
-//       if (finded.length == 0) {
-//         await initalCurrency();
-//       }
-//     } catch (Err) {
-//       // console.log(Err);
-//     }
-//   })
-//   .catch((err) => {
-//     //   console.log(err);
-//   });
-
-// Coin.sync()
-//   .then(async () => {
-//     try {
-//       const finded = await Coin.findAll();
-//       if (finded.length == 0) {
-//         await initialCoin();
-//       }
-//     } catch (Err) {
-//       //  console.log(Err);
-//     }
-//   })
-//   .catch((err) => {
-//     //  console.log(err);
-//   });
-
-// CoinPrice.sync()
-//   .then(async () => {
-//     try {
-//       const finded = await CoinPrice.findAll();
-//       if (finded.length == 0) {
-//         await initialCoinPrice();
-//       }
-//     } catch (Err) {
-//       // console.log(Err);
-//     }
-//   })
-//   .catch((err) => {
-//     //  console.log(err);
-//   });
-
-// CurrencyPrice.sync()
-//   .then(async () => {
-//     try {
-//       const finded = await CurrencyPrice.findAll();
-//       if (finded.length == 0) {
-//         await initialCurrencyPrice();
-//       }
-//     } catch (err) {
-//       //  console.log(err);
-//     }
-//   })
-//   .catch((err) => {
-//     //  console.log(err);
-//   });

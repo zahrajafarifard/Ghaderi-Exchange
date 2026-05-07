@@ -15,7 +15,35 @@ Ghaderi-Exchange/
 └── site/
 ```
 
-## Getting Started
+## 🐳 Docker Setup (Recommended)
+
+The project includes a full Docker Compose setup for running all services together.
+
+### Start all services
+
+```bash
+docker compose up --build
+```
+
+This will start:
+
+Backend API (Express + Socket.IO)
+MySQL database
+Frontend (Next.js site)
+
+### ⛔ Stop all services
+
+```bash
+docker compose down
+```
+
+### 💣 Reset database (WARNING: deletes all data)
+
+```bash
+docker compose down -v
+```
+
+## Getting Started (Local Development)
 
 Each project has its own dependencies and README. Start with the backend, then run the website or desktop app.
 
@@ -38,13 +66,15 @@ npm install
 npm start
 ```
 
-## Highlights
+## ✨ Features
 
-- Realtime currency and coin updates with Socket.IO
-- MySQL data layer with Sequelize models for prices and archives
-- Public Next.js website with responsive pages and local assets
-- Electron desktop interface for administrative price management
-- Separate documentation for every application in the workspace
+⚡ Real-time currency & coin updates (Socket.IO)
+🗄 MySQL database with Sequelize ORM
+📊 Price history archives for coins & currencies
+🌐 Responsive Next.js public website
+🖥 Electron desktop admin panel
+🐳 Full Docker Compose orchestration
+🔄 Seeder-based initial data setup
 
 ## Author
 

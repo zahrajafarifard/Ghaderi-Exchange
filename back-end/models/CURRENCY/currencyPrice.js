@@ -1,30 +1,33 @@
-const {DataTypes} = require("sequelize")
-const db = require("../../db.js")
+const { DataTypes } = require("sequelize");
+const db = require("../../db.js");
 
-
-const currencyPrice=db.define("currencyPrice",{
+const currencyPrice = db.define(
+  "currencyPrice",
+  {
     id: {
-        type: DataTypes.INTEGER,
-        autoIncrement: true,
-        unique: true,
-        primaryKey: true,
-        require: true
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      unique: true,
+      primaryKey: true,
+      allowNull: false,
     },
     buyPrice: {
-        type: DataTypes.INTEGER,
-        defaultValue:0
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
     },
     sellPrice: {
-        type: DataTypes.INTEGER,
-        defaultValue:0
-    }
-    ,pBuyPrice: {
-        type: DataTypes.INTEGER,
-        defaultValue:0
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
+    pBuyPrice: {
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
     },
     pSellPrice: {
-        type: DataTypes.INTEGER,
-        defaultValue:0,
-    }
-},{timestamps:true})
-module.exports=currencyPrice;
+      type: DataTypes.INTEGER,
+      defaultValue: 0,
+    },
+  },
+  { timestamps: true },
+);
+module.exports = currencyPrice;

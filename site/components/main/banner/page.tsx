@@ -6,7 +6,7 @@ import icon2 from "@/public/images/western.svg";
 import icon3 from "@/public/images/SWIFT.svg";
 import banner from "@/public/images/banner.png";
 
-import { Hamrah } from "@/app/layout";
+import { Hamrah } from "@/app/fonts";
 
 const Banner: React.FC = () => {
   return (

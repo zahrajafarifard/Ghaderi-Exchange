@@ -7,7 +7,7 @@ const Config = db.define("Config", {
     autoIncrement: true,
     unique: true,
     primaryKey: true,
-    require: true,
+    allowNull: false,
   },
   address: {
     type: DataTypes.STRING,
